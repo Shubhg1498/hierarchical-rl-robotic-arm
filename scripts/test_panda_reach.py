@@ -1,3 +1,4 @@
+import time
 import gymnasium as gym
 import panda_gym
 
@@ -12,9 +13,11 @@ def main():
     print("Action space:", env.action_space)
     print("Observation space:", env.observation_space)
 
-    for _ in range(1000):
+    for _ in range(2000):
         action = env.action_space.sample()
         observation, reward, terminated, truncated, info = env.step(action)
+
+        time.sleep(1 / 60)  # slows rendering to around 60 FPS
 
         if terminated or truncated:
             observation, info = env.reset()
