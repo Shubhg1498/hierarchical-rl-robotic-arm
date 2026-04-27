@@ -1,0 +1,8 @@
+gymnasium
+panda-gym
+pybullet
+stable-baselines3
+numpy
+matplotlib
+pandas
+torch
